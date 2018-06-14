@@ -15,7 +15,7 @@ redirectHome :: Application
 redirectHome _ sendResponse = sendResponse $ redirectTo "/"
 
 appSettings :: StaticSettings
-appSettings = let s = embeddedSettings $(embedDir "ui")
+appSettings = let s = embeddedSettings $(embedDir "ui/build")
               in s {ss404Handler = Just redirectHome}
 
 browserApp :: Application
